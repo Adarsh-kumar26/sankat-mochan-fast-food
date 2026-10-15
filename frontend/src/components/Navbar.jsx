@@ -15,14 +15,18 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <Link to="/" className="brand">
-        🍔 Sankat Mochan Fast Food
+        <span className="brand-badge">SM</span>
+        <span className="brand-text">
+          Sankat Mochan
+          <small>Fast Food</small>
+        </span>
       </Link>
       <div className="nav-links">
         <Link to="/">Menu</Link>
         {user && <Link to="/orders">My Orders</Link>}
         {user?.isAdmin && <Link to="/admin">Admin</Link>}
         <Link to="/cart" className="cart-link">
-          Cart{totalItems > 0 ? ` (${totalItems})` : ""}
+          🛒 Cart{totalItems > 0 ? <span className="cart-badge">{totalItems}</span> : null}
         </Link>
         {user ? (
           <>
@@ -34,7 +38,9 @@ export default function Navbar() {
         ) : (
           <>
             <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <Link to="/register" className="nav-cta">
+              Register
+            </Link>
           </>
         )}
       </div>

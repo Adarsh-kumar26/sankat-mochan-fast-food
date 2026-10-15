@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import Menu from "./pages/Menu.jsx";
 import Login from "./pages/Login.jsx";
@@ -45,6 +46,7 @@ export default function App() {
           />
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }
